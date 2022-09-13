@@ -1,0 +1,45 @@
+<div class="flex flex-col justify-center items-center ">
+<h2 mat-dialog-title>Create Savings Group</h2>
+
+<mat-dialog-content [formGroup]="createSavingsGroupForm" >
+  
+  <div class="flex flex-col justify-center items-center w-full">
+    <mat-form-field style="width:300px">
+      <input matInput
+              placeholder="Savings Group Name"
+             formControlName="group_name">
+    </mat-form-field>
+    <mat-form-field style="width:100%">
+      <input matInput
+              placeholder="Contribution Amount(ETH)"
+              step="0.0001"
+             formControlName="contribution_amount">
+  </mat-form-field>
+  <mat-form-field style="width:100%">
+    <mat-label>Contribution Frequency</mat-label>
+    <select matNativeControl formControlName="contribution_frequency">
+      <option value=0 selected>Daily</option>
+      <option value=1>Weekly</option>
+      <option value=2>Monthly</option>
+      <option value=3>Test</option>
+      
+    </select>
+  </mat-form-field>
+<mat-form-field style="width:100%">
+    <input matInput
+    
+            placeholder="Reserve Contribution(ETH)"
+            step="0.0001"
+           formControlName="reserve_balance">
+</mat-form-field>
+  </div>
+     
+</mat-dialog-content >
+
+<mat-dialog-actions>
+    <button class="mat-raised-button rounded-md m-2 p-2"(click)="close()">Close</button>
+    <button class="mat-raised-button mat-primary rounded-md m-2 p-2 disabled:opacity-50"
+    [disabled]="createSavingsGroupForm.invalid"
+    (click)="save()">Create</button>
+</mat-dialog-actions>
+</div>

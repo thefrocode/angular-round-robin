@@ -1,0 +1,10 @@
+<div>
+    <mat-progress-bar [mode]="data?.showProgress?'indeterminate':'determinate'"
+    [value]="data?.showProgress?100:100"></mat-progress-bar>
+    <p class="text-center">{{data?.message}}</p>
+    <div *ngIf="!data?.showProgress"mat-dialog-actions class="flex justify-center">
+        <button mat-raised-button mat-dialog-close class="mat-primary rounded-md m-2 p-2">Close</button>
+      </div>
+</div>
+
+

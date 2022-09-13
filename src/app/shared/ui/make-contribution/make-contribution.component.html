@@ -1,0 +1,18 @@
+<div class="flex flex-col justify-center items-center ">
+<h2 mat-dialog-title>Make Contribution</h2>
+
+<mat-dialog-content [formGroup]="makeContributionForm">
+  
+    <mat-form-field style="width:300px">
+        <input matInput
+                placeholder="How much do you want to send?"
+               formControlName="contribution_amount">
+    </mat-form-field>
+    
+</mat-dialog-content >
+
+<mat-dialog-actions>
+    <button class="mat-raised-button  rounded-md m-2 p-2"(click)="close()">Close</button>
+    <button class="mat-raised-button mat-primary  rounded-md m-2 p-2"(click)="save()">Send</button>
+</mat-dialog-actions>
+</div>

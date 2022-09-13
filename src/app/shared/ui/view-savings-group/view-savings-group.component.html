@@ -1,0 +1,26 @@
+<div class="flex flex-col justify-center items-center">
+  <h2 mat-dialog-title>View Savings Group</h2>
+
+  <mat-dialog-content [formGroup]="viewSavingsGroupForm">
+    <mat-form-field style="width: 300px">
+      <input
+        matInput
+        placeholder="Savings Group Address"
+        formControlName="group_address"
+      />
+    </mat-form-field>
+  </mat-dialog-content>
+
+  <mat-dialog-actions>
+    <button class="mat-raised-button rounded-md m-2 p-2" (click)="close()">
+      Close
+    </button>
+    <button
+      class="mat-raised-button mat-primary rounded-md m-2 p-2 disabled:opacity-50"
+      [disabled]="viewSavingsGroupForm.invalid"
+      (click)="open()"
+    >
+      Open
+    </button>
+  </mat-dialog-actions>
+</div>

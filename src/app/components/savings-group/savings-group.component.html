@@ -1,0 +1,72 @@
+<div class="h-full flex flex-col justify-center items-center bg-slate-100">
+  <div class="flex flex-row bg-[#fff] m-3 px-3 py-5 rounded-md w-4/5 justify-between">
+    <div class="flex flex-col">
+      <h3>Group Name: {{group_details?.[0]}}</h3>
+      <h2>Address: {{ group_address }}</h2>
+    </div>
+    
+    <div class="flex flex-row">
+      <button *ngIf="member_details?.[0][2]=='Chairperson' || group_details?.[1]==0"
+      class="m-1 px-2 py-1 rounded-md drop-shadow-lg bg-indigo-900 text-white"
+      (click)="openAddMemberForm()"
+    >
+      Add Member
+    </button>
+    <button
+      class="m-1 px-2 py-1 rounded-md drop-shadow-lg bg-indigo-900 text-white"
+      (click)="openMakeContributionForm()"
+    >
+      Make Contribution
+    </button>
+    </div>
+  </div>
+  
+  <div class="flex flex-row justify-between w-4/5">
+    <div
+      class="w-1/2 flex flex-row m-4 p-4 rounded-md drop-shadow-lg bg-[#fff]"
+    >
+    <div class="w-1/2">
+      <p>No of members: </p>
+      <p>Next recepient: </p>
+      <p>Contribution Amount: </p>
+      <p>Reserve Contribution: </p>
+    </div>
+    <div class="w-1/2">
+      <p>{{group_details?.[1]}}</p>
+      <p>{{group_details?.[4][3] | shortenAddress}}</p>
+      <p>{{group_details?.[2] | parseEther}}</p>
+      <p>{{group_details?.[3] | parseEther}}</p>
+    </div>
+      
+    </div>
+    <div
+      class="w-1/2 flex flex-row m-4 p-4 rounded-md drop-shadow-lg bg-[#fff]"
+    >
+    <div class="w-1/2">
+      <p>ReserveBalance: </p>
+      <p>Total Amount Contributed:</p>
+      <p>Investment Contribution: </p>
+      <p>Time to next contribution:</p>
+    </div>
+    <div class="w-1/2">
+      <p>{{group_details?.[5] | parseEther}}</p>
+      <p>{{group_details?.[6] | parseEther}}</p>
+      <p>{{group_details?.[7] | parseEther}}</p>
+      <p>{{group_details?.[8]}}</p>
+    </div>
+      
+    </div>
+  </div>
+  <div class="w-1/2 flex flex-col m-4 p-4 rounded-md drop-shadow-lg bg-[#fff]">
+    <p>Member Details</p>
+    <p>Name: {{member_details?.[0][1]}}</p>
+    <p>Title: {{member_details?.[0][2]}}</p>
+    <p>Address: {{member_details?.[0][3] | shortenAddress}}</p>
+    <p>Reserve Bal: {{member_details?.[1] | parseEther}}</p>
+    <p>Remaining Contribution: {{member_details?.[2] | parseEther}}</p>
+    <p>Investment Bal: {{member_details?.[3] | parseEther}}</p>
+  </div>
+
+  
+  
+</div>
